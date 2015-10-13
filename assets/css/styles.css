@@ -1,0 +1,716 @@
+/* Fonts
+   ========================================================================== */
+/**
+ * Import fonts to document.
+ */
+@font-face {
+  font-weight: normal;
+  font-style: normal;
+  font-family: 'Open Sans';
+  src: url("../fonts/OpenSans-Light.ttf");
+}
+
+@font-face {
+  font-family: 'Open Sans Bold';
+  src: url("../fonts/OpenSans-Bold.ttf");
+}
+
+@font-face {
+  font-family: 'Open Sans Italic';
+  src: url("../fonts/OpenSans-LightItalic.ttf");
+}
+
+@font-face {
+  font-family: 'Open Sans Regular';
+  src: url("../fonts/OpenSans-Regular.ttf");
+}
+
+@font-face {
+  font-family: 'Open Sans SemiboldItalic';
+  src: url("../fonts/OpenSans-SemiboldItalic.ttf");
+}
+
+/* Fonts
+   ========================================================================== */
+body {
+  background: rgba(90, 90, 90, 0.2);
+  font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+  color: rgba(0, 0, 0, 0.5);
+}
+
+/* Basics
+   ========================================================================== */
+.paper {
+  box-shadow: 0px 0px 4px 1px rgba(0, 0, 0, 0.3);
+  background: white;
+  margin: 20px;
+  padding: 50px 40px;
+}
+
+/* Header
+   ========================================================================== */
+.top-header {
+  text-align: center;
+}
+
+@media only screen and (min-width: 1024px) {
+  .top-header {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    text-align: left;
+    margin-bottom: 50px;
+  }
+}
+
+.logo h1 {
+  font-size: 1.5em;
+  line-height: 1;
+}
+
+.logo span {
+  font-size: 0.6875em;
+}
+
+.address,
+.contact {
+  color: rgba(0, 0, 0, 0.3);
+  font-size: 12px;
+  margin: 15px 0;
+}
+
+.address div,
+.contact div {
+  padding: 0 10px;
+}
+
+.address div:first-child,
+.contact div:first-child {
+  font-family: 'Open Sans Bold';
+}
+
+@media only screen and (min-width: 1024px) {
+  .address div:first-child,
+  .contact div:first-child {
+    font-family: 'Open Sans Italic';
+    border-right: 0.5px solid rgba(0, 0, 0, 0.4);
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .address,
+  .contact {
+    margin: 6px 0 0;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .address {
+    margin-left: 95px;
+  }
+  .contact {
+    margin-left: 60px;
+  }
+}
+
+/* Sections
+   ========================================================================== */
+@media only screen and (min-width: 1024px) {
+  .archievements {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+  }
+  .archievements .col-1 {
+    -webkit-box-flex: 1;
+    -moz-box-flex: 1;
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    margin-right: 20px;
+  }
+  .archievements .col-2 {
+    -webkit-box-flex: 1;
+    -moz-box-flex: 1;
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    margin-left: 20px;
+  }
+}
+
+.section p {
+  margin-bottom: 20px;
+}
+
+.section-header {
+  color: rgba(0, 0, 0, 0.6);
+  font-family: 'Open Sans Regular';
+  font-size: 9px;
+  text-transform: uppercase;
+  border-bottom: 2px dotted;
+  letter-spacing: -0.05rem;
+  padding-bottom: 6px;
+  text-align: center;
+}
+
+@media only screen and (min-width: 1024px) {
+  .section-header {
+    text-align: left;
+  }
+}
+
+.section-body {
+  font-size: 12px;
+  color: rgba(0, 0, 0, 0.5);
+  padding: 20px 0;
+}
+
+/* My Specialities section
+   ========================================================================== */
+.circles {
+  margin-bottom: 130px;
+  text-align: center;
+}
+
+.circle {
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  border-radius: 50%;
+  display: inline-block;
+  width: 130px;
+  height: 130px;
+  border: 1px solid rgba(0, 0, 0, 0.4);
+  position: relative;
+}
+
+.circle .rect {
+  -ms-transform: translateX(-50%) rotate(90deg);
+  -webkit-transform: translateX(-50%) rotate(90deg);
+  transform: translateX(-50%) rotate(90deg);
+  position: absolute;
+  bottom: -20%;
+  left: 50%;
+  width: 120px;
+  height: 1px;
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.circle .rect::before {
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  border-radius: 50%;
+  content: '';
+  display: block;
+  width: 6px;
+  height: 6px;
+  background: rgba(0, 0, 0, 0.6);
+  position: absolute;
+  top: calc(50% - 3px);
+}
+
+.circle .rect-lg {
+  width: 150px;
+  bottom: -30%;
+}
+
+.circle .rect-lg + p {
+  bottom: -120%;
+}
+
+.circle p {
+  font-family: 'Open Sans Regular';
+  color: rgba(0, 0, 0, 0.6);
+  text-align: center;
+  position: absolute;
+  width: 100%;
+  bottom: -100%;
+}
+
+/* Design Skills section
+   ========================================================================== */
+@media only screen and (min-width: 700px) {
+  .design {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+  }
+  .design .technical {
+    -webkit-box-flex: 1;
+    -moz-box-flex: 1;
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+  }
+}
+
+.technical {
+  margin-bottom: 20px;
+}
+
+.technical,
+.knowledge {
+  /* header */
+}
+
+.technical header,
+.knowledge header {
+  font-family: 'Open Sans SemiboldItalic';
+  font-size: 12px;
+}
+
+.knowledge .body label {
+  display: block;
+}
+
+.skill {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+
+.skill p {
+  -webkit-box-flex: 1;
+  -moz-box-flex: 1;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+}
+
+.skill .bullets {
+  -webkit-box-flex: 1;
+  -moz-box-flex: 1;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+}
+
+.skill p {
+  margin-bottom: 0;
+  display: inline-block;
+}
+
+.bullets {
+  display: inline-block;
+}
+
+.bullets span {
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  border-radius: 50%;
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.bullets span.fill {
+  background: rgba(0, 0, 0, 0.7);
+}
+
+.bullets span:not(:first-child) {
+  margin-left: 5px;
+}
+
+/* Language Skills section
+   ========================================================================== */
+.language {
+  text-align: center;
+  font-family: 'Open Sans Regular';
+}
+
+.language .circle {
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  border-radius: 50%;
+  display: inline-block;
+  width: 120px;
+  height: 120px;
+  border: 12px solid rgba(0, 0, 0, 0.7);
+  position: relative;
+}
+
+.language .circle .content {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  bottom: auto;
+  right: auto;
+  -ms-transform: translateX(-50%) translateY(-50%);
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+}
+
+.language .circle.expert {
+  border-color: rgba(0, 0, 0, 0.7);
+}
+
+.language .circle.middle {
+  border-bottom-color: rgba(0, 0, 0, 0.2);
+  -webkit-transform: rotate(45deg);
+}
+
+.language .circle.middle .content {
+  left: 50%;
+  top: 50%;
+  bottom: auto;
+  right: auto;
+  -ms-transform: rotate(-45deg) translateX(-50%) translateY(-50%);
+  -webkit-transform: rotate(-45deg) translateX(-50%) translateY(-50%);
+  transform: rotate(-45deg) translateX(-50%) translateY(-50%);
+  -webkit-transform-origin: 0 0;
+}
+
+.language .circle.beginner {
+  border-color: rgba(0, 0, 0, 0.2);
+  border-bottom-color: rgba(0, 0, 0, 0.8);
+  -webkit-transform: rotate(-45deg);
+}
+
+.language .circle.beginner .content {
+  left: 50%;
+  top: 50%;
+  bottom: auto;
+  right: auto;
+  -ms-transform: rotate(45deg) translateX(-50%) translateY(-50%);
+  -webkit-transform: rotate(45deg) translateX(-50%) translateY(-50%);
+  transform: rotate(45deg) translateX(-50%) translateY(-50%);
+  -webkit-transform-origin: 0 0;
+}
+
+.language label {
+  display: block;
+  text-transform: uppercase;
+  color: rgba(0, 0, 0, 0.7);
+}
+
+.language span {
+  color: rgba(0, 0, 0, 0.5);
+}
+
+@media only screen and (min-width: 700px) {
+  .language .section-body {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-justify-content: space-around;
+    justify-content: space-around;
+  }
+}
+
+/* Language Skills section
+   ========================================================================== */
+.timeline {
+  font-family: 'Open Sans Regular';
+  margin: 15px 0;
+}
+
+.timeline div {
+  padding: 15px 0 15px 20px;
+  border-left: 2px solid rgba(0, 0, 0, 0.7);
+  position: relative;
+  /*
+		 * Add triangle and mini-circle to first and last child.
+		 */
+  /*
+		 * Add circle to timeline.
+		 */
+  /*
+		 * Paint dates and school name.
+		 */
+}
+
+.timeline div:first-child::after {
+  content: '';
+  display: inline-block;
+  width: 0;
+  height: 0;
+  position: absolute;
+  top: -9px;
+  left: -7px;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-bottom: 9px solid rgba(0, 0, 0, 0.8);
+}
+
+.timeline div:last-child::after {
+  content: '';
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  background: rgba(0, 0, 0, 0.8);
+  position: absolute;
+  bottom: -6px;
+  left: -4px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  border-radius: 50%;
+}
+
+.timeline div::before {
+  content: '';
+  width: 10px;
+  height: 10px;
+  display: inline-block;
+  position: absolute;
+  border: 2px solid white;
+  background: rgba(0, 0, 0, 0.8);
+  left: -8px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  border-radius: 50%;
+  top: 50%;
+  bottom: auto;
+  -ms-transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+.timeline div span:first-child,
+.timeline div span:last-child {
+  color: rgba(0, 0, 0, 0.8);
+}
+
+.timeline span {
+  display: block;
+  line-height: 17px;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+/* Work Experience section
+   ========================================================================== */
+@media only screen and (min-width: 570px) {
+  .work-experience {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+  }
+}
+
+.work-experience .work {
+  -webkit-box-flex: 1;
+  -moz-box-flex: 1;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+}
+
+.work {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  align-items: flex-end;
+  -webkit-align-items: flex-end;
+}
+
+.work .year {
+  width: 80px;
+  font-size: 80px;
+  line-height: .8;
+  font-family: 'Open Sans Regular';
+  color: rgba(0, 0, 0, 0.8);
+}
+
+.work .icon {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.work span {
+  display: block;
+  line-height: 17px;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.work span:first-child,
+.work span:last-child {
+  color: rgba(0, 0, 0, 0.8);
+}
+
+/* Recognitions section
+   ========================================================================== */
+.prime {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: center;
+  justify-align-items: center;
+  margin: 20px 0 35px 0;
+  /*
+	&:not(:last-child) {
+		margin-bottom: 50px;
+	}
+	*/
+}
+
+.prime .icon {
+  width: 95px;
+  text-align: center;
+}
+
+.prime .icon img {
+  height: 90px;
+}
+
+.prime span {
+  display: block;
+  line-height: 17px;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.prime span:first-child,
+.prime span:last-child {
+  color: rgba(0, 0, 0, 0.8);
+}
+
+/* Hobbies section
+   ========================================================================== */
+.row {
+  /*
+	.circle-small {
+		display: inline-block;
+		width: 160px;
+		height: 160px;
+		border: 1px solid rgba(0, 0, 0, .2);
+
+		@include border-radius(50%);
+
+		span {
+			color: rgba(0, 0, 0, .8);
+			font-family: 'Open Sans Regular';
+			display: block;
+			width: 100%;
+			text-align: center;
+			margin-bottom: 10px;
+		}
+
+		@include MQ(L) {
+			width: 95px;
+			height: 95px;
+		}
+	}
+
+	@include MQ(L) {
+		@include flexbox;
+		@include justify-content(space-between);
+	}
+	*/
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+}
+
+@media only screen and (min-width: 700px) {
+  .row {
+    -webkit-flex-direction: row;
+    flex-direction: row;
+  }
+}
+
+.row:not(:last-child) {
+  margin-bottom: 20px;
+}
+
+.row .circle-small {
+  width: 70px;
+  height: 70px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  position: relative;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  border-radius: 50%;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  align-items: flex-end;
+  -webkit-align-items: flex-end;
+}
+
+.row .circle-small span {
+  color: rgba(0, 0, 0, 0.8);
+  font-family: 'Open Sans Regular';
+  display: block;
+  width: 100%;
+}
+
+@media only screen and (min-width: 700px) {
+  .row .circle-small {
+    width: 80px;
+    height: 80px;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .row .circle-small {
+    width: 95px;
+    height: 95px;
+  }
+}
+
+.hobby {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  bottom: auto;
+  right: auto;
+  -ms-transform: translateX(-50%) translateY(-50%);
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+  text-align: center;
+}
+
+.hobby img {
+  width: 40px;
+  height: 40px;
+}
+
+.hobby span {
+  display: block;
+}
+
+.topic {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  bottom: auto;
+  right: auto;
+  -ms-transform: translateX(-50%) translateY(-50%);
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+  text-align: center;
+  width: 60px;
+  height: 60px;
+}

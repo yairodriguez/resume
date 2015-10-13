@@ -1,0 +1,594 @@
+@import '../partials/mixins';
+
+$S:     480px;
+$M:     700px;
+$L:     1024px;
+
+/* Fonts
+   ========================================================================== */
+
+/**
+ * Import fonts to document.
+ */
+
+@font-face {
+	font-weight: normal;
+	font-style: normal;
+	font-family: 'Open Sans';
+	src: url('../fonts/OpenSans-Light.ttf');
+}
+
+@font-face {
+	font-family: 'Open Sans Bold';
+	src: url('../fonts/OpenSans-Bold.ttf');
+}
+
+@font-face {
+	font-family: 'Open Sans Italic';
+	src: url('../fonts/OpenSans-LightItalic.ttf');
+}
+
+@font-face {
+	font-family: 'Open Sans Regular';
+	src: url('../fonts/OpenSans-Regular.ttf');
+}
+
+@font-face {
+	font-family: 'Open Sans SemiboldItalic';
+	src: url('../fonts/OpenSans-SemiboldItalic.ttf');
+}
+
+/* Fonts
+   ========================================================================== */
+
+body {
+	background: rgba(90, 90, 90, .2);
+	font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+	color: rgba(0, 0, 0, .5);
+}
+
+/* Basics
+   ========================================================================== */
+
+.paper {
+	box-shadow: 0px 0px 4px 1px rgba(0, 0, 0, .3);
+	background: white;
+	margin: 20px;
+	padding: 50px 40px;
+}
+
+/* Header
+   ========================================================================== */
+.top-header {
+	text-align: center;
+
+	@include MQ(L) {
+		@include flexbox();
+		text-align: left;
+		margin-bottom: 50px;
+	}
+}
+
+.logo {
+	h1 {
+		font-size: 1.5em;
+		line-height: 1;
+	}
+
+	span {
+		font-size: 0.6875em;
+	}
+}
+
+.address,
+.contact {
+	color: rgba(0, 0, 0, .3);
+	font-size: 12px;
+	margin: 15px 0;
+
+	div {
+		padding: 0 10px;
+	}
+
+	div:first-child {
+		font-family: 'Open Sans Bold';
+
+		@include MQ(L) {
+			font-family: 'Open Sans Italic';
+			border-right: .5px solid rgba(0, 0, 0, .4);
+		}
+	}
+
+	@include MQ(L) {
+		margin: 6px 0 0;
+		@include flexbox();
+	}
+}
+
+@include MQ(L) {
+	.address {
+		margin-left: 95px;
+	}
+
+	.contact {
+		margin-left: 60px;
+	}
+}
+
+/* Sections
+   ========================================================================== */
+.archievements {
+	@include MQ(L) {
+		@include flexbox();
+
+		.col-1 {
+			@include flex(1);
+			margin-right: 20px;
+		}
+
+		.col-2 {
+			@include flex(1);
+			margin-left: 20px;
+		}
+	}
+}
+
+.section {
+
+	p {
+		margin-bottom: 20px;
+	}
+
+	&-header {
+		color: rgba(0, 0, 0, .6);
+		font-family: 'Open Sans Regular';
+		font-size: 9px;
+		text-transform: uppercase;
+		border-bottom: 2px dotted;
+		letter-spacing: -0.05rem;
+		padding-bottom: 6px;
+		text-align: center;
+
+		@include MQ(L) {
+			text-align: left;
+		}
+	}
+
+	&-body {
+		font-size: 12px;
+		color: rgba(0, 0, 0, .5);
+		padding: 20px 0;
+	}
+}
+
+/* My Specialities section
+   ========================================================================== */
+.circles {
+	margin-bottom: 130px;
+	text-align: center;
+}
+
+.circle {
+
+	@include border-radius(50%);
+	display: inline-block;
+	width: 130px;
+	height: 130px;
+	border: 1px solid rgba(0, 0, 0, .4);
+	position: relative;
+
+	.rect {
+		@include transform(translateX(-50%) rotate(90deg));
+		position: absolute;
+		bottom: -20%;
+		left: 50%;
+		width: 120px;
+		height: 1px;
+		background: rgba(0, 0, 0, .4);
+
+		&::before {
+			@include border-radius(50%);
+			content: '';
+			display: block;
+			width: 6px;
+			height: 6px;
+			background: rgba(0, 0, 0, .6);
+			position: absolute;
+			top: calc(50% - 3px);
+		}
+
+		&-lg {
+			width: 150px;
+			bottom: -30%;
+
+			+ p {
+				bottom: -120%;
+			}
+		}
+	}
+
+	p {
+		font-family: 'Open Sans Regular';
+		color: rgba(0, 0, 0, .6);
+		text-align: center;
+		position: absolute;
+		width: 100%;
+		bottom: -100%;
+	}
+}
+
+/* Design Skills section
+   ========================================================================== */
+.design {
+	@include MQ(700px) {
+		@include flexbox();
+
+		.technical {
+			@include flex(1);
+		}
+	}
+}
+
+.technical {
+	margin-bottom: 20px;
+}
+
+.technical,
+.knowledge {
+	/* header */
+	header {
+		font-family: 'Open Sans SemiboldItalic';
+		font-size: 12px;
+	}
+}
+
+.knowledge .body label {
+	display: block;
+}
+
+.skill {
+	@include flexbox();
+
+	p {
+		@include flex(1);
+	}
+
+	.bullets {
+		@include flex(1);
+	}
+}
+
+.skill p {
+	margin-bottom: 0;
+	display: inline-block;
+}
+
+.bullets {
+	display: inline-block;
+
+	span {
+		@include border-radius(50%);
+		display: inline-block;
+		width: 10px;
+		height: 10px;
+		background: rgba(0, 0, 0, .2);
+
+		&.fill {
+			background: rgba(0, 0, 0, .7);
+		}
+		
+		&:not(:first-child) { margin-left: 5px; }
+	}
+}
+
+/* Language Skills section
+   ========================================================================== */
+.language {
+	text-align: center;
+	font-family: 'Open Sans Regular';
+
+	.circle {
+		@include border-radius(50%);
+		display: inline-block;
+		width: 120px;
+		height: 120px;
+		border: 12px solid rgba(0, 0, 0, .7);
+
+		//border: 12px solid rgba(0, 0, 0, .7);
+		position: relative;
+
+		.content {
+			position: absolute;
+			@include center;
+		}
+
+		&.expert {
+			border-color: rgba(0, 0, 0, .7);
+		}
+
+		&.middle {
+			border-bottom-color: rgba(0, 0, 0, .2);
+			-webkit-transform: rotate(45deg);
+
+			.content {
+				@include center-rotate(-45deg);
+			}
+		}
+
+		&.beginner {
+			border-color: rgba(0, 0, 0, .2);
+			border-bottom-color: rgba(0, 0, 0, .8);
+			-webkit-transform: rotate(-45deg);
+
+			.content {
+				@include center-rotate(45deg);
+			}
+		}
+	}
+
+	label {
+		display: block;
+		text-transform: uppercase;
+		color: rgba(0, 0, 0, .7);
+	}
+
+	span {
+		color: rgba(0, 0, 0, .5);
+	}
+
+	.section-body {
+		@include MQ(M) {
+			@include flexbox;
+			@include justify-content(space-around);
+		}
+	}
+}
+
+/* Language Skills section
+   ========================================================================== */
+.timeline {
+	font-family: 'Open Sans Regular';
+	margin: 15px 0;
+
+	div {
+		padding: 15px 0 15px 20px;
+		border-left: 2px solid rgba(0, 0, 0, .7);
+		position: relative;
+
+		/*
+		 * Add triangle and mini-circle to first and last child.
+		 */
+		&:first-child::after {
+			content: '';
+			display: inline-block;
+			width: 0;
+			height: 0;
+			position: absolute;
+			top: -9px;
+			left: -7px;
+			border-left: 6px solid transparent;
+			border-right: 6px solid transparent;
+			border-bottom: 9px solid rgba(0, 0, 0, .8);
+		}
+
+		&:last-child::after {
+			content: '';
+			display: inline-block;
+			width: 6px;
+			height: 6px;
+			background: rgba(0, 0, 0, .8);
+			position: absolute;
+			bottom: -6px;
+			left: -4px;
+			@include border-radius(50%);
+		}
+
+		/*
+		 * Add circle to timeline.
+		 */
+		&::before {
+			content: '';
+			width: 10px;
+			height: 10px;
+			display: inline-block;
+			position: absolute;
+			border: 2px solid white;
+			background: rgba(0, 0, 0, .8);
+			left: -8px;
+
+			@include border-radius(50%);
+			@include center(y);
+		}
+
+		/*
+		 * Paint dates and school name.
+		 */
+		span:first-child,
+		span:last-child {
+			color: rgba(0, 0, 0, .8);
+		}
+	}
+
+	span {
+		display: block;
+		line-height: 17px;
+		color: rgba(0, 0, 0, .6);
+	}
+}
+
+/* Work Experience section
+   ========================================================================== */
+.work-experience {
+
+	@include MQ(570px) {
+		@include flexbox();
+	}
+
+	.work {
+		@include flex(1);
+	}
+}
+
+.work {
+	@include flexbox();
+	align-items: flex-end;
+	-webkit-align-items: flex-end;
+
+	.year {
+		width: 80px;
+		//font-size: 140px;
+		font-size: 80px;
+		line-height: .8;
+		font-family: 'Open Sans Regular';
+		color: rgba(0, 0, 0, .8);
+	}
+
+	.icon {
+		background: rgba(0, 0, 0, .1);
+	}
+
+	span {
+		display: block;
+		line-height: 17px;
+		color: rgba(0, 0, 0, .6);
+	}
+
+	span:first-child,
+	span:last-child {
+		color: rgba(0, 0, 0, .8);
+	}
+}
+
+/* Recognitions section
+   ========================================================================== */
+.prime {
+	@include flexbox();
+	@include align-items;
+	margin: 20px 0 35px 0;
+
+	/*
+	&:not(:last-child) {
+		margin-bottom: 50px;
+	}
+	*/
+
+	.icon {
+		width: 95px;
+		text-align: center;
+
+		img {
+			height: 90px;
+		}
+	}
+
+	span {
+		display: block;
+		line-height: 17px;
+		color: rgba(0, 0, 0, .6);
+	}
+
+	span:first-child,
+	span:last-child {
+		color: rgba(0, 0, 0, .8);
+	}
+}
+
+/* Hobbies section
+   ========================================================================== */
+.row {
+/*
+	.circle-small {
+		display: inline-block;
+		width: 160px;
+		height: 160px;
+		border: 1px solid rgba(0, 0, 0, .2);
+
+		@include border-radius(50%);
+
+		span {
+			color: rgba(0, 0, 0, .8);
+			font-family: 'Open Sans Regular';
+			display: block;
+			width: 100%;
+			text-align: center;
+			margin-bottom: 10px;
+		}
+
+		@include MQ(L) {
+			width: 95px;
+			height: 95px;
+		}
+	}
+
+	@include MQ(L) {
+		@include flexbox;
+		@include justify-content(space-between);
+	}
+	*/
+	
+	@include flexbox;
+	@include justify-content(space-between);
+
+	@include MQ(M) {
+		-webkit-flex-direction: row;
+		flex-direction: row;
+
+		
+	}
+	
+	&:not(:last-child) {
+		margin-bottom: 20px;
+	}
+
+	.circle-small {
+		width: 70px;
+		height: 70px;
+		border: 1px solid rgba(0, 0, 0, .2);
+		position: relative;
+
+		@include border-radius(50%);
+		@include flexbox;
+		align-items: flex-end;
+		-webkit-align-items: flex-end;
+
+		span {
+			color: rgba(0, 0, 0, .8);
+			font-family: 'Open Sans Regular';
+			display: block;
+			width: 100%;
+		}
+
+		@include MQ(M) {
+			width: 80px;
+			height: 80px;
+		}
+
+		@include MQ(L) {
+			width: 95px;
+			height: 95px;
+		}
+	}
+}
+
+.hobby {
+	position: absolute;
+	@include center;
+	text-align: center;
+
+	img {
+		width: 40px;
+		height: 40px;
+	}
+
+	span {
+		display: block;
+	}
+}
+
+.topic {
+	position: absolute;
+	@include center;
+	text-align: center;
+	width: 60px;
+	height: 60px;
+}

@@ -1,0 +1,90 @@
+@mixin flexbox() {
+	display: -webkit-box;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+}
+
+@mixin MQ($canvas) {
+	@if $canvas == S {
+		@media only screen and (min-width: $S) {
+			@content;
+		}
+	}
+	@else if $canvas == M {
+		@media only screen and (min-width: $M) {
+			@content;
+		}
+	}
+	@else if $canvas == L {
+		@media only screen and (min-width: $L) {
+			@content;
+		}
+	}
+	@else {
+		@media only screen and (min-width: $canvas) {
+			@content;
+		}
+	}
+}
+
+@mixin border-radius($px) {
+	-webkit-border-radius: $px;
+	-moz-border-radius: $px;
+	-ms-border-radius: $px;
+	border-radius: $px;
+}
+
+@mixin transform($properties) {
+	-ms-transform: $properties;
+	-webkit-transform: $properties;
+	transform: $properties;
+}
+
+@mixin flex($value) {
+	-webkit-box-flex: $value;
+	-moz-box-flex: $value;
+	-webkit-flex: $value;
+	-ms-flex: $value;
+	flex: $value;
+}
+
+@mixin center($xy:xy) {
+	@if $xy == xy {
+		left: 50%;
+		top: 50%;
+		bottom: auto;
+		right: auto;
+		@include transform(translateX(-50%) translateY(-50%));
+	}
+	@else if $xy == x {
+		left: 50%;
+		right: auto;
+		@include transform(translateX(-50%));
+	}
+	@else if $xy == y {
+		top: 50%;
+		bottom: auto;
+		@include transform(translateY(-50%));
+	}
+}
+
+@mixin center-rotate($r) {
+	left: 50%;
+	top: 50%;
+	bottom: auto;
+	right: auto;
+	@include transform(rotate($r) translateX(-50%) translateY(-50%));
+	-webkit-transform-origin: 0 0;
+}
+
+@mixin justify-content($aligned: center) {
+	-webkit-justify-content: $aligned;
+	justify-content: $aligned;
+}
+
+@mixin align-items($aligned: center) {
+	-webkit-align-items: $aligned;
+	justify-align-items: $aligned;
+}
