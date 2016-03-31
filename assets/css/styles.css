@@ -44,7 +44,11 @@ body {
   box-shadow: 0px 0px 4px 1px rgba(0, 0, 0, 0.3);
   background: white;
   margin: 20px;
-  padding: 50px 40px;
+  padding: 50px 40px 30px 40px;
+}
+
+.highlight {
+  color: rgba(200, 0, 0, 0.6);
 }
 
 /* Header
@@ -79,6 +83,21 @@ body {
   color: rgba(0, 0, 0, 0.3);
   font-size: 12px;
   margin: 15px 0;
+}
+
+.address a,
+.contact a {
+  text-decoration: none;
+  color: rgba(0, 0, 0, 0.3);
+}
+
+.address a:hover,
+.address a:focus,
+.address a:active,
+.contact a:hover,
+.contact a:focus,
+.contact a:active {
+  color: rgba(0, 0, 0, 0.5);
 }
 
 .address div,
@@ -240,23 +259,6 @@ body {
 
 /* Design Skills section
    ========================================================================== */
-@media only screen and (min-width: 700px) {
-  .design {
-    display: -webkit-box;
-    display: -moz-box;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-  }
-  .design .technical {
-    -webkit-box-flex: 1;
-    -moz-box-flex: 1;
-    -webkit-flex: 1;
-    -ms-flex: 1;
-    flex: 1;
-  }
-}
-
 .technical {
   margin-bottom: 20px;
 }
@@ -273,7 +275,17 @@ body {
 }
 
 .knowledge .body label {
+  /*display: block;*/
+}
+
+.knowledge .body label::after {
+  /*content: '';
   display: block;
+  width: 15px;
+  height: 2px;
+  background: rgba(0, 0, 0, 0.5);
+  margin-top: -2px;
+  margin-bottom: 6px;*/
 }
 
 .skill {
@@ -285,11 +297,14 @@ body {
 }
 
 .skill p {
-  -webkit-box-flex: 1;
-  -moz-box-flex: 1;
-  -webkit-flex: 1;
-  -ms-flex: 1;
-  flex: 1;
+  -webkit-box-flex: 2;
+  -moz-box-flex: 2;
+  -webkit-flex: 2;
+  -ms-flex: 2;
+  flex: 2;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .skill .bullets {
@@ -644,7 +659,6 @@ body {
 .row .circle-small {
   width: 70px;
   height: 70px;
-  border: 1px solid rgba(0, 0, 0, 0.2);
   position: relative;
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
@@ -670,6 +684,7 @@ body {
   .row .circle-small {
     width: 80px;
     height: 80px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
   }
 }
 
@@ -713,4 +728,13 @@ body {
   text-align: center;
   width: 60px;
   height: 60px;
+}
+
+.copy {
+  font-size: 12px;
+  margin: 0;
+  text-align: center;
+  font-family: 'Open Sans Regular';
+  margin-top: 50px;
+  color: rgba(0, 0, 0, 0.6);
 }
